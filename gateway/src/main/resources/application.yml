@@ -1,0 +1,82 @@
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  cloud:
+    gateway:
+      routes:
+        - id: front
+          uri: http://localhost:8081
+          predicates:
+            - Path=/주문/**, /orders/**, /payments/**, /메뉴판/**, /통합주문상태/**
+        - id: store
+          uri: http://localhost:8082
+          predicates:
+            - Path=/주문관리/**, /orderManages/**, /주문상세보기/**
+        - id: customer
+          uri: http://localhost:8083
+          predicates:
+            - Path=/logs/**, /orderStatuses/**
+        - id: delivery
+          uri: http://localhost:8084
+          predicates:
+            - Path=/deliveries/**, 
+        - id: frontend
+          uri: http://localhost:8080
+          predicates:
+            - Path=/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: front
+          uri: http://front:8080
+          predicates:
+            - Path=/주문/**, /orders/**, /payments/**, /메뉴판/**, /통합주문상태/**
+        - id: store
+          uri: http://store:8080
+          predicates:
+            - Path=/주문관리/**, /orderManages/**, /주문상세보기/**
+        - id: customer
+          uri: http://customer:8080
+          predicates:
+            - Path=/logs/**, /orderStatuses/**
+        - id: delivery
+          uri: http://delivery:8080
+          predicates:
+            - Path=/deliveries/**, 
+        - id: frontend
+          uri: http://frontend:8080
+          predicates:
+            - Path=/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080
