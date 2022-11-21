@@ -42,7 +42,7 @@ mvn spring-boot:run
 - store
 ```
  http :8088/주문관리 id="id" 
- http :8088/orderManages id="id" foodId="foodId" preference="preference" orderId="orderId" status="status" test="test" 
+ http :8088/orderManages id="id" foodId="foodId" preference="preference" orderId="orderId" status="status" test="test" couponNumber="couponNumber" 
 ```
 - customer
 ```
