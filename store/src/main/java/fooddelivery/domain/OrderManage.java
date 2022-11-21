@@ -58,6 +58,12 @@ public class OrderManage  {
     
     
     private String test;
+    
+    
+    
+    
+    
+    private Long couponNumber;
 
     @PostPersist
     public void onPostPersist(){

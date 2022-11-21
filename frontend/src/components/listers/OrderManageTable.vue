@@ -72,6 +72,7 @@
                     { text: "orderId", value: "orderId" },
                     { text: "status", value: "status" },
                     { text: "test", value: "test" },
+                    { text: "couponNumber", value: "couponNumber" },
                 ],
             orderManage : [],
             newValue: {},
@@ -94,6 +95,7 @@
                 'orderId': '',
                 'status': '',
                 'test': '',
+                'couponNumber': 0,
             }
         },
         methods: {

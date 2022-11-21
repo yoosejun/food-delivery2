@@ -10,9 +10,10 @@ import lombok.*;
 public class CouponPublished extends AbstractEvent {
 
     private Long id;
-    private String 요리종류;
-    private String 배달지주소;
     private String orderId;
+    private String foodId;
+    private String address;
+    private Long couponNumber;
 
     public CouponPublished(OrderManage aggregate){
         super(aggregate);

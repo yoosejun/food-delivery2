@@ -20,6 +20,9 @@
             <div>
                 <String label="Test" v-model="item.test" :editMode="editMode" @change="change" />
             </div>
+            <div>
+                <Number label="CouponNumber" v-model="item.couponNumber" :editMode="editMode" @change="change" />
+            </div>
         </v-card-text>
 
         <v-card-actions>

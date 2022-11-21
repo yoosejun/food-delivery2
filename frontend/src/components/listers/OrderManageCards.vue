@@ -73,6 +73,7 @@
                 'orderId': '',
                 'status': '',
                 'test': '',
+                'couponNumber': 0,
             }
         },
         methods:{
