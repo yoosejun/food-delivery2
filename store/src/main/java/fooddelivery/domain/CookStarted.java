@@ -7,18 +7,17 @@ import lombok.*;
 
 @Data
 @ToString
-public class CookStart extends AbstractEvent {
+public class CookStarted extends AbstractEvent {
 
     private Long id;
     private String foodId;
     private String orderId;
-    private String preference;
     private String status;
 
-    public CookStart(OrderManage aggregate){
+    public CookStarted(OrderManage aggregate){
         super(aggregate);
     }
-    public CookStart(){
+    public CookStarted(){
         super();
     }
 }

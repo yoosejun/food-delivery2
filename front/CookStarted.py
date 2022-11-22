@@ -2,11 +2,10 @@
 from AbstractEvent import AbstractEvent
 import json
 
-class CookStart(AbstractEvent):
+class CookStarted(AbstractEvent):
     id : int
     foodId : str
     orderId : str
-    preference : str
     status : str
     
     def __init__(self):
@@ -14,6 +13,5 @@ class CookStart(AbstractEvent):
         self.id = None
         self.foodId = None
         self.orderId = None
-        self.preference = None
         self.status = None
 

@@ -176,11 +176,11 @@ public class PolicyHandler{
         
 
     }
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='Accept'")
-    public void wheneverAccept_AlertViaKakao(@Payload Accept accept){
+    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='Wrapped'")
+    public void wheneverWrapped_AlertViaKakao(@Payload Wrapped wrapped){
 
-        Accept event = accept;
-        System.out.println("\n\n##### listener AlertViaKakao : " + accept + "\n\n");
+        Wrapped event = wrapped;
+        System.out.println("\n\n##### listener AlertViaKakao : " + wrapped + "\n\n");
 
 
         

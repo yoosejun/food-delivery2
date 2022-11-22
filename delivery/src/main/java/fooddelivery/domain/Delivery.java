@@ -2,7 +2,7 @@ package fooddelivery.domain;
 
 import fooddelivery.domain.DeliveryStarted;
 import fooddelivery.domain.Delivered;
-import fooddelivery.domain.Accept;
+import fooddelivery.domain.Wrapped;
 import fooddelivery.DeliveryApplication;
 import javax.persistence.*;
 import java.util.List;
@@ -81,8 +81,8 @@ public class Delivery  {
             .deliveryConfirm(delivery);
 
 
-        Accept accept = new Accept(this);
-        accept.publishAfterCommit();
+        Wrapped wrapped = new Wrapped(this);
+        wrapped.publishAfterCommit();
 
     }
 

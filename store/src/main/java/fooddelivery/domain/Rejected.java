@@ -10,6 +10,9 @@ import lombok.*;
 public class Rejected extends AbstractEvent {
 
     private Long id;
+    private String foodId;
+    private String orderId;
+    private String status;
 
     public Rejected(OrderManage aggregate){
         super(aggregate);

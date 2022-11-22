@@ -9,6 +9,9 @@ import java.util.*;
 public class Rejected extends AbstractEvent {
 
     private Long id;
+    private String foodId;
+    private String orderId;
+    private String status;
 }
 
 

@@ -1,11 +1,10 @@
 package fooddelivery.domain;
 
 import fooddelivery.domain.배달시작됨;
-import fooddelivery.domain.CouponPublished;
 import fooddelivery.domain.Cooked;
 import fooddelivery.domain.Accepted;
 import fooddelivery.domain.Rejected;
-import fooddelivery.domain.CookStart;
+import fooddelivery.domain.CookStarted;
 import fooddelivery.domain.쿠폰발행됨;
 import fooddelivery.StoreApplication;
 import javax.persistence.*;
@@ -34,12 +33,6 @@ public class OrderManage  {
     
     
     private String foodId;
-    
-    
-    
-    
-    
-    private String preference;
     
     
     
@@ -74,11 +67,6 @@ public class OrderManage  {
 
 
 
-        CouponPublished couponPublished = new CouponPublished(this);
-        couponPublished.publishAfterCommit();
-
-
-
         Cooked cooked = new Cooked(this);
         cooked.publishAfterCommit();
 
@@ -94,8 +82,8 @@ public class OrderManage  {
 
 
 
-        CookStart cookStart = new CookStart(this);
-        cookStart.publishAfterCommit();
+        CookStarted cookStarted = new CookStarted(this);
+        cookStarted.publishAfterCommit();
 
     }
     @PrePersist
