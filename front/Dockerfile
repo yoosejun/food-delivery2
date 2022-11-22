@@ -1,9 +1,4 @@
-FROM python:3.7.3
-COPY . /app
-WORKDIR /app
-
-ENV TZ=Asia/Seoul
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN pip3 install --upgrade pip
-RUN pip3 install -r requirements.txt
-CMD ["python3", "app.py", "-m", "Docker"]
+FROM openjdk:13-jdk-alpine3.10
+COPY target/*SNAPSHOT.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java","-Xmx400M","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar","--spring.profiles.active=docker"]
