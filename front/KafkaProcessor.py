@@ -7,7 +7,7 @@ from PolicyHandler import whenever배달시작됨_주문상태변경
 from PolicyHandler import wheneverAccepted_UpdateStatus
 from PolicyHandler import wheneverRejected_UpdateStatus
 from PolicyHandler import wheneverCooked_UpdateStatus
-from PolicyHandler import wheneverCookStart_UpdateStatus
+from PolicyHandler import wheneverCookStarted_UpdateStatus
 from PolicyHandler import wheneverOrderCanceled_CancelPayment
 from PolicyHandler import wheneverRejected_OrderCancel
 
@@ -37,11 +37,11 @@ def consume(msg):
     data = json.loads(my_json)
     if data['eventType'] == "배달시작됨":
         whenever배달시작됨_주문상태변경(data)
-    if data['eventType'] == "Accepted""Rejected""Cooked""CookStart":
+    if data['eventType'] == "Accepted""Rejected""Cooked""CookStarted":
         wheneverAccepted_UpdateStatus(data)
         wheneverRejected_UpdateStatus(data)
         wheneverCooked_UpdateStatus(data)
-        wheneverCookStart_UpdateStatus(data)
+        wheneverCookStarted_UpdateStatus(data)
     if data['eventType'] == "OrderCanceled":
         wheneverOrderCanceled_CancelPayment(data)
     if data['eventType'] == "Rejected":

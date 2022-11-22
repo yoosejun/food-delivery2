@@ -11,7 +11,6 @@ public class Accepted extends AbstractEvent {
 
     private Long id;
     private String foodId;
-    private String preference;
     private String ordered;
     private String status;
 

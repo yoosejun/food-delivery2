@@ -169,7 +169,7 @@ public class Log  {
 
         
     }
-    public static void alertViaKakao(Accept accept){
+    public static void alertViaKakao(Wrapped wrapped){
 
         /** Example 1:  new item 
         Log log = new Log();
@@ -179,7 +179,7 @@ public class Log  {
 
         /** Example 2:  finding and process
         
-        repository().findById(accept.get???()).ifPresent(log->{
+        repository().findById(wrapped.get???()).ifPresent(log->{
             
             log // do something
             repository().save(log);

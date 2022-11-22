@@ -36,13 +36,13 @@ mvn spring-boot:run
 - front
 ```
  http :8088/주문 id="id" 품목="품목" 수량="수량" 
- http :8088/orders id="id" foodId="foodId" amount="amount" customerId="customerId" preference="preference" options="options" address="address" status="status" 
+ http :8088/orders id="id" foodId="foodId" amount="amount" customerId="customerId" options="options" address="address" status="status" 
  http :8088/payments id="id" orderId="orderId" amount="amount" 
 ```
 - store
 ```
  http :8088/주문관리 id="id" 
- http :8088/orderManages id="id" foodId="foodId" preference="preference" orderId="orderId" status="status" test="test" couponNumber="couponNumber" 
+ http :8088/orderManages id="id" foodId="foodId" orderId="orderId" status="status" test="test" couponNumber="couponNumber" 
 ```
 - customer
 ```

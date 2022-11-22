@@ -6,7 +6,6 @@ class Cooked(AbstractEvent):
     id : int
     foodId : str
     orderId : str
-    preference : str
     status : str
     
     def __init__(self):
@@ -14,6 +13,5 @@ class Cooked(AbstractEvent):
         self.id = None
         self.foodId = None
         self.orderId = None
-        self.preference = None
         self.status = None
 

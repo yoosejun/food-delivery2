@@ -64,10 +64,10 @@ def wheneverCooked_UpdateStatus(data):
     payment = Payment()
     paymentrepository.save(payment)
     
-from CookStart import CookStart
+from CookStarted import CookStarted
 
-def wheneverCookStart_UpdateStatus(data):
-    event = CookStart()
+def wheneverCookStarted_UpdateStatus(data):
+    event = CookStarted()
     event = util.AutoBinding(data, event)
     
     주문 = 주문()
